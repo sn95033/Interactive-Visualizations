@@ -9,7 +9,7 @@ function buildGauge(wfreq) {
     let x = radius * Math.cos(radians);
     let y = radius * Math.sin(radians);
 
-    // Path may have to change to create a better triangle
+    // Generate a path 
     let mainPath = "M-.0 -0.05 L  .0 0.05 L";
     let pathX = String(x);
     let space = " ";
@@ -66,7 +66,7 @@ function buildGauge(wfreq) {
                 }
             }
         ],
-        title: "Belly Button Washing Frequency <br> Scrubs per Week",
+        title: "Belly Button Washing Frequency <br> Cleans per Week",
         height: 500,
         width: 500,
         xaxis: {

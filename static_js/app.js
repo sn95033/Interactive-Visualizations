@@ -2,16 +2,23 @@ function buildMetadata(sample) {
 
   // @TODO: Complete the following function that builds the metadata panel
 
-  // Use `d3.json` to fetch the metadata for a sample
+  // Use `d3.json` to fetch the metadata for a sample. Using backticks rather than
+  // concatenation.  Sample is being passed in from one of the functions
+  // Once that is completed,  .then the data is 
+  
     d3.json(`/metadata/${sample}`).then((data) => {
-        // Use d3 to select the panel with id of `#sample-metadata`
+        // Will be using flask to create a route data
+        //Use d3 to select the panel with id of `#sample-metadata`
+        // d3 will grab the metadata from index.html from the 'panel-body'
         var PANEL = d3.select('#sample-metadata');
 
         // Use `.html("") to clear any existing metadata
         PANEL.html("");
+
         // Use `Object.entries` to add each key and value pair to the panel
         // Hint: Inside the loop, you will need to use d3 to append new
         // tags for each key-value in the metadata.
+        
         Object.entries(data).forEach(([key, value]) => {
           PANEL.append("h6").text(`${key}:${value}`);
         })
